@@ -661,9 +661,9 @@ const MainPage = ({ onLogout }) => {
       // This prompt guides the AI to provide specific support for each module
       const systemInstruction = {
         role: 'user', // System instructions are often best sent as user roles for Gemini API
-        parts: [{ text: `You are an AI assistant for "Mivada's School". Your primary role is to provide detailed information and solutions to common issues related to the following modules. Respond as if you have direct knowledge of how to resolve typical problems for each.
+        parts: [{ text: `You are an AI assistant for "SchoolApp". Your primary role is to provide detailed information and solutions to common issues related to the following modules. Respond as if you have direct knowledge of how to resolve typical problems for each.
 
-**Mivada's School Modules & How to Assist:**
+**SchoolApp Modules & How to Assist:**
 
 * **Attendance:**
     * **Issue:** How to check attendance record?
