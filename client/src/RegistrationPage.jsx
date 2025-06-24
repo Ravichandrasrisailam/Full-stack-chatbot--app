@@ -15,7 +15,7 @@ const RegistrationPage = ({ onNavigateToLogin }) => {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/auth/register', {
+      const response = await fetch('https://full-stack-chatbot-app.onrender.com ', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

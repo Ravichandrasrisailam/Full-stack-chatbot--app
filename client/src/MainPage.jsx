@@ -39,7 +39,7 @@ const MainPage = ({ onLogout }) => {
       }));
       chatHistory.push({ role: 'user', parts: [{ text: newUserMessage.text }] });
 
-      const response = await fetch('http://localhost:5000/api/chat', {
+      const response = await fetch('https://full-stack-chatbot-app.onrender.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
