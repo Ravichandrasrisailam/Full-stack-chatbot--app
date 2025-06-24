@@ -1,5 +1,5 @@
     import React, { useState, useEffect } from 'react';
-    import LoginPage from "./Loginpage.jsx";
+    import LoginPage from "./LoginPage.jsx";
     import RegistrationPage from "./Registrationpage.jsx";
     import MainPage from "./mainpage.jsx";
 
