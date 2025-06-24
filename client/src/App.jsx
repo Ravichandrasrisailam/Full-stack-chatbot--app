@@ -1,7 +1,7 @@
     import React, { useState, useEffect } from 'react';
     import LoginPage from "./LoginPage.jsx";
-    import RegistrationPage from "./Registrationpage.jsx";
-    import MainPage from "./mainpage.jsx";
+    import RegistrationPage from "./RegistrationPage.jsx";
+    import MainPage from "./MainPage.jsx";
 
 
     const App = () => {
