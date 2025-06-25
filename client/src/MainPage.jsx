@@ -493,7 +493,7 @@ const MainPage = ({ onLogout }) => {
       // This tells the AI to act as an FAQ bot for your SchoolApp modules
       const systemInstruction = {
         role: 'user', // System instructions are often best sent as user roles for Gemini API
-        parts: [{ text: `You are an AI assistant for "SchoolApp". Your primary role is to provide information and help users with issues related to the following modules:
+        parts: [{ text: `You are an AI assistant for "Mivada's School". Your primary role is to provide information and help users with issues related to the following modules:
 - Attendance
 - Time Table
 - Curriculum
