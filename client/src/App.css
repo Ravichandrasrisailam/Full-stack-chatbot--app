@@ -1,0 +1,71 @@
+/* General Body and Root Styles */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif; /* Using Inter font */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden; /* Prevent body scrollbar */
+  background-color: #1a202c; /* Consistent dark background for the whole viewport */
+}
+
+/* Main App Container - Ensures centering of the app card */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center; /* Centers vertically */
+  justify-content: center; /* Centers horizontally */
+  padding: 1rem;
+  background-color: #1a202c; /* Matches body background */
+  box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+/* Card-like container for the main app content (Login/Reg/MainPage) */
+.app-card {
+  background-color: #ffffff; /* Default white background, will be overridden by page-specific CSS */
+  border-radius: 0.75rem; /* Rounded corners */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  width: 100%;
+  max-width: 64rem; /* Max width for larger screens */
+  height: 90vh; /* Fixed height for the main app card */
+  display: flex;
+  flex-direction: column; /* Default vertical layout for mobile */
+  overflow: hidden; /* Hide overflowing content */
+}
+
+@media (min-width: 768px) {
+  .app-card {
+    flex-direction: row; /* Horizontal layout on larger screens */
+  }
+}
+
+/* Loading Spinner styles */
+.loading-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #1a202c;
+  color: #a0aec0;
+  position: fixed; /* Overlay the entire screen */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000; /* Ensure it's on top of other content */
+}
+
+.loading-spinner-circle {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #4299e1; /* Blue spinner */
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

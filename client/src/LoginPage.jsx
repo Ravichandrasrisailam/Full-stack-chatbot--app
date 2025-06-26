@@ -1,31 +1,119 @@
 
-import React, { useState } from 'react';
-import './LoginPage.css'; 
+// import React, { useState } from 'react';
+// import './LoginPage.css'; 
 
-const LoginPage = ({ onLoginSuccess, onNavigateToRegister }) => {
+// const LoginPage = ({ onLoginSuccess, onNavigateToRegister }) => {
+//   const [username, setUsername] = useState('');
+//   const [password, setPassword] = useState('');
+//   const [message, setMessage] = useState('');
+
+//   const handleLogin = async (e) => {
+//     e.preventDefault();
+//     setMessage('');
+
+//     try {
+//       const response = await fetch('https://full-stack-chatbot-app.onrender.com/api/auth/login', {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify({ username, password }),
+//       });
+
+//       const data = await response.json();
+
+//       if (response.ok) {
+//         localStorage.setItem('token', data.token);
+//         setMessage('Login successful!');
+//         setTimeout(() => onLoginSuccess(), 500);
+//       } else {
+//         setMessage(data.message || 'Login failed. Please check your credentials.');
+//       }
+//     } catch (error) {
+//       console.error('Error during login:', error);
+//       setMessage('An error occurred. Please try again later.');
+//     }
+//   };
+
+//   return (
+//     <div className="login-container">
+//       <h2 className="login-title">Welcome Back!</h2>
+//       <p className="login-subtext"> The New Mivada's AI.</p>
+//       <form onSubmit={handleLogin} className="login-form">
+//         <div className="form-group">
+//           <label htmlFor="username" className="form-label">Username:</label>
+//           <input
+//             type="text"
+//             id="username"
+//             className="form-input"
+//             value={username}
+//             onChange={(e) => setUsername(e.target.value)}
+//             required
+//             placeholder="Enter your username"
+//           />
+//         </div>
+//         <div className="form-group">
+//           <label htmlFor="password" className="form-label">Password:</label>
+//           <input
+//             type="password"
+//             id="password"
+//             className="form-input"
+//             value={password}
+//             onChange={(e) => setPassword(e.target.value)}
+//             required
+//             placeholder="Enter your password"
+//           />
+//         </div>
+//         <button type="submit" className="login-button">Login</button>
+
+//         {message && (
+//           <p className={`login-message ${message.includes('successful') ? 'success' : 'error'}`}>
+//             {message}
+//           </p>
+//         )}
+
+//         <p className="register-link-text">
+//           Don't have an account?{' '}
+//           <button type="button" onClick={onNavigateToRegister} className="register-link-button">
+//             Register here
+//           </button>
+//         </p>
+//       </form>
+//     </div>
+//   );
+// };
+
+// export default LoginPage;
+
+import React, { useState } from 'react';
+import './LoginPage.css'; // Import page-specific CSS
+
+const LoginPage = ({ onLoginSuccess, onNavigateToRegister, message, setMessage }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [message, setMessage] = useState('');
+
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    setMessage('');
+    setMessage(''); // Clear previous messages
 
     try {
       const response = await fetch('https://full-stack-chatbot-app.onrender.com/api/auth/login', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify({ username, password }),
       });
 
       const data = await response.json();
 
       if (response.ok) {
-        localStorage.setItem('token', data.token);
+        localStorage.setItem('token', data.token); // Store JWT token
         setMessage('Login successful!');
-        setTimeout(() => onLoginSuccess(), 500);
+        setTimeout(() => {
+          onLoginSuccess(); // Navigate to main page
+        }, 1000); // Short delay for message to show
       } else {
-        setMessage(data.message || 'Login failed. Please check your credentials.');
+        setMessage(data.message || 'Login failed.');
       }
     } catch (error) {
       console.error('Error during login:', error);
@@ -34,49 +122,60 @@ const LoginPage = ({ onLoginSuccess, onNavigateToRegister }) => {
   };
 
   return (
-    <div className="login-container">
-      <h2 className="login-title">Welcome Back!</h2>
-      <p className="login-subtext"> The New Mivada's AI.</p>
+    <div className="login-page-container">
+      <h2 className="login-page-title">
+        Welcome Back!
+      </h2>
+      <p className="login-page-description">
+        Log in to chat with Mida, your Mivada assistant.
+      </p>
       <form onSubmit={handleLogin} className="login-form">
-        <div className="form-group">
-          <label htmlFor="username" className="form-label">Username:</label>
+        <div className="login-form-group">
+          <label htmlFor="loginUsername" className="login-form-label">
+            Username:
+          </label>
           <input
             type="text"
-            id="username"
-            className="form-input"
+            id="loginUsername"
+            className="login-form-input"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
             placeholder="Enter your username"
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="password" className="form-label">Password:</label>
+        <div className="login-form-group">
+          <label htmlFor="loginPassword" className="login-form-label">
+            Password:
+          </label>
           <input
             type="password"
-            id="password"
-            className="form-input"
+            id="loginPassword"
+            className="login-form-input"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
             placeholder="Enter your password"
           />
         </div>
-        <button type="submit" className="login-button">Login</button>
-
+        <button type="submit" className="login-form-button">
+          Login
+        </button>
         {message && (
-          <p className={`login-message ${message.includes('successful') ? 'success' : 'error'}`}>
+          <p className={`login-message-text ${message.includes('successful') ? 'success' : 'error'}`}>
             {message}
           </p>
         )}
-
-        <p className="register-link-text">
-          Don't have an account?{' '}
-          <button type="button" onClick={onNavigateToRegister} className="register-link-button">
-            Register here
-          </button>
-        </p>
       </form>
+      <p className="login-navigation-link-text">
+        Don't have an account?{' '}
+        <button
+          onClick={onNavigateToRegister}
+          className="login-navigation-link-button"
+        >
+          Register here.
+        </button>
+      </p>
     </div>
   );
 };
