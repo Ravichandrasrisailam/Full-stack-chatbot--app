@@ -684,7 +684,7 @@ What specific information are you looking for, or which area of Mivada.com do yo
         return;
       }
 
-      
+
       const chatHistoryForAPI = [];
 
       // --- MIVADA.COM FAQ SYSTEM INSTRUCTION ---
@@ -813,7 +813,7 @@ Prioritize a helpful, conversational flow over immediate redirection. Ensure all
       {/* Input Box */}
       <div className="input-area">
         <textarea
-          placeholder="What's on your mind..."
+          placeholder="Ask you query here..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyPress={handleKeyPress}
