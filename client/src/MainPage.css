@@ -312,20 +312,15 @@
 
 /* Message Input Area */
 .chat-input-area {
-  /* padding: 1rem;
+   padding: 1rem;
   border-top: 1px solid #4a5568;
   background-color: #2d3748; /* Darker gray for input area */
-  /*border-bottom-right-radius: 0.75rem;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem; */
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem;
-  background-color: #2d3748;
-  border-top: 1px solid #4a5568;
   border-bottom-right-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; 
+  width: 100%;
+  
 }
 
 .input-flex-container {

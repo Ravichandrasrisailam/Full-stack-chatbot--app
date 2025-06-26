@@ -157,7 +157,7 @@
 .login-form {
   width: 100%;
   max-width: 30rem; /* Wider form */
-  padding: 2.5rem; /* Increased padding */
+  padding: 4.5rem; /* Increased padding */
   border-radius: 1rem; /* More rounded corners */
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3), 0 10px 20px -5px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
   border: 1px solid #4a5568; /* Dark border */
