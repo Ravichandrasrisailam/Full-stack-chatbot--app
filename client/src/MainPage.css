@@ -1,148 +1,5 @@
-/* .main-container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  background-color: #f8f9fa;
-  border-radius: 1rem;
-  overflow: hidden;
-}
 
-.chat-header {
-  background: linear-gradient(to right, #3b82f6, #14b8a6);
-  padding: 1rem;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
-.chat-title {
-  font-size: 1.25rem;
-  font-weight: bold;
-}
-
-.logout-button {
-  background-color: #ef4444;
-  border: none;
-  padding: 0.5rem 1rem;
-  color: white;
-  border-radius: 9999px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.logout-button:hover {
-  background-color: #dc2626;
-}
-
-.chat-messages-area {
-  flex: 1;
-  padding: 1rem;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  background-color: #f1f5f9;
-}
-
-.message-wrapper {
-  display: flex;
-  margin-bottom: 1rem;
-}
-
-.message-wrapper.user {
-  justify-content: flex-end;
-}
-
-.message-wrapper.bot {
-  justify-content: flex-start;
-}
-
-.message-box {
-  max-width: 70%;
-  padding: 0.75rem;
-  border-radius: 0.75rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.message-box.user {
-  background-color: #3b82f6;
-  color: white;
-  border-bottom-right-radius: 0;
-}
-
-.message-box.bot {
-  background-color: #e5e7eb;
-  color: #1f2937;
-  border-bottom-left-radius: 0;
-}
-
-.timestamp {
-  display: block;
-  margin-top: 0.25rem;
-  font-size: 0.75rem;
-  color: #94a3b8;
-}
-
-.input-area {
-  display: flex;
-  padding: 1rem;
-  border-top: 1px solid #e2e8f0;
-  background-color: white;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.message-input {
-  flex: 1;
-  padding: 0.75rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 0.5rem;
-  resize: none;
-  height: 2.5rem;
-  font-size: 1rem;
-}
-
-.send-button {
-  background-color: #2563eb;
-  border: none;
-  padding: 0.75rem;
-  border-radius: 0.5rem;
-  color: white;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.send-button:hover {
-  transform: scale(1.05);
-  background-color: #1e40af;
-}
-
-.send-icon {
-  width: 24px;
-  height: 24px;
-}
-
-.loading-indicator {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem;
-}
-
-.spinner {
-  border: 3px solid #ccc;
-  border-top: 3px solid #3b82f6;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-} */
 .main-container {
   flex: 1;
   display: flex;
@@ -219,6 +76,7 @@
   scrollbar-width: thin;
   scrollbar-color: #4a5568 #2d3748;
 }
+
 
 .message-wrapper {
   display: flex;
@@ -311,45 +169,33 @@
 
 
 /* Message Input Area */
-.chat-input-area {
-   padding: 1rem;
+.input-area { /* This is the container for the text input and send button */
+  padding: 1rem;
   border-top: 1px solid #4a5568;
   background-color: #2d3748; /* Darker gray for input area */
   border-bottom-right-radius: 0.75rem;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem; 
-  
-  
+  display: flex; /* Makes input and button align horizontally */
+  align-items: center; /* Vertically centers input and button */
+  gap: 0.75rem; /* Space between input and button */
+  width: 100%; /* Ensures the container takes full width */
+  box-sizing: border-box; /* Includes padding in width calculation */
 }
 
-.input-flex-container {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.message-input {
-   flex: 1;
-  width: 80%;
+.message-input { /* The actual textarea for user input */
+  flex: 1; /* Allows the textarea to grow and shrink to fill available space */
+  min-width: 0; /* Allows flex item to shrink below its content size */
   padding: 0.75rem;
   border: 1px solid #4a5568;
   border-radius: 0.5rem;
   outline: none;
-  resize: none;
-  height: 3rem;
-  overflow: hidden;
+  resize: none; /* Prevents manual resizing by user */
+  min-height: 3rem; /* Ensures a minimum height for the input field */
+  max-height: 8rem; /* Sets a maximum height before internal scrolling occurs */
+  overflow-y: auto; /* Enables vertical scrolling within the textarea if content exceeds max-height */
   background-color: #1a202c; /* Deepest gray for input field */
   color: #f7fafc;
-  transition: all 0.2s ease-in-out; 
-  flex: 1;
-  height: 2.75rem; /*  Adjust this to match button */
-  padding: 0.75rem;
-  border: 1px solid #4a5568;
-  border-radius: 0.5rem;
-  resize: none;
-  background-color: #1a202c;
-  color: #f7fafc;
+  transition: all 0.2s ease-in-out;
+  box-sizing: border-box; /* Includes padding in width calculation */
 }
 .message-input::placeholder {
   color: #a0aec0;
@@ -373,7 +219,7 @@
 .send-button {
   background-image: linear-gradient(to right, #06b6d4, #3b82f6); /* Cyan to Blue gradient */
   color: #ffffff;
-  padding: 0.75rem;
+  padding: 0.75rem; /* Makes the button roughly square by providing equal padding */
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   display: flex;
@@ -382,9 +228,7 @@
   transition: all 0.3s ease-in-out;
   transform: scale(1);
   cursor: pointer;
-   height: 2.75rem; /* 👈 Same as .message-input */
-  width: 2.75rem;
-  padding: 0;
+  flex-shrink: 0; /* Prevents the button from shrinking when space is limited */
 }
 .send-button:hover {
   background-image: linear-gradient(to right, #0e7490, #2563eb);

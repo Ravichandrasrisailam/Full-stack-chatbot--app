@@ -1,115 +1,6 @@
-/* .login-container {
-  flex: 1;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(to bottom right, #8b5cf6, #6366f1);
-  color: white;
-  border-radius: 1rem 1rem 1rem 1rem;
-  min-height: 100vh;
- 
-}
 
-.login-title {
-  font-size: 2rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  text-align: center;
-}
 
-.login-subtext {
-  font-size: 1.125rem;
-  margin-bottom: 2rem;
-  text-align: center;
-  max-width: 300px;
-}
 
-.login-form {
-  background-color: white;
-  padding: 3rem;
-  border-radius: 0.75rem;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-  width: 100%;
-  max-width: 400px;
-  color: #1f2937;
-  
-}
-
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.form-label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-  font-size: 0.875rem;
-}
-
-.form-input {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-}
-
-.form-input:focus {
-  outline: none;
-  border-color: #6366f1;
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
-}
-
-.login-button {
-  width: 100%;
-  background-color: #6366f1;
-  color: white;
-  font-weight: bold;
-  padding: 0.75rem;
-  border: none;
-  border-radius: 0.5rem;
-  transition: transform 0.4s ease, background-color 0.2s ease;
-}
-
-.login-button:hover {
-  background-color: #4f46e5;
-  transform: scale(1.15);
-}
-
-.login-message {
-  text-align: center;
-  margin-top: 1rem;
-  font-size: 0.875rem;
-}
-
-.login-message.success {
-  color: green;
-}
-
-.login-message.error {
-  color: red;
-}
-
-.register-link-text {
-  text-align: center;
-  margin-top: 1rem;
-  font-size: 0.875rem;
-  color: #4b5563;
-}
-
-.register-link-button {
-  background: none;
-  border: none;
-  color: #6366f1;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.register-link-button:hover {
-  color: #4338ca;
-} */
 .login-page-container {
   flex: 1; /* Take up available space */
   padding: 2.5rem; /* Increased padding */
@@ -157,7 +48,7 @@
 .login-form {
   width: 100%;
   max-width: 30rem; /* Wider form */
-  padding: 4.5rem; /* Increased padding */
+  padding: 2.5rem; /* Increased padding */
   border-radius: 1rem; /* More rounded corners */
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3), 0 10px 20px -5px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
   border: 1px solid #4a5568; /* Dark border */

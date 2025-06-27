@@ -1,42 +1,44 @@
-/* General Body and Root Styles */
+/* General Body and Root Styles - Allowing browser scrolling */
 html, body, #root {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Inter', sans-serif; /* Using Inter font */
+  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow: hidden; /* Prevent body scrollbar */
-  background-color: #1a202c; /* Consistent dark background for the whole viewport */
+  /* Removed overflow: hidden from here to allow native scrolling */
+  background-color: #1a202c;
 }
 
 /* Main App Container - Ensures centering of the app card */
 .app-container {
   min-height: 100vh;
   display: flex;
-  align-items: center; /* Centers vertically */
-  justify-content: center; /* Centers horizontally */
+  align-items: center;
+  justify-content: center;
   padding: 1rem;
-  background-color: #1a202c; /* Matches body background */
-  box-sizing: border-box; /* Include padding in element's total width and height */
+  background-color: #1a202c;
+  box-sizing: border-box;
 }
 
 /* Card-like container for the main app content (Login/Reg/MainPage) */
 .app-card {
-  background-color: #ffffff; /* Default white background, will be overridden by page-specific CSS */
-  border-radius: 0.75rem; /* Rounded corners */
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   width: 100%;
-  max-width: 64rem; /* Max width for larger screens */
-  height: 90vh; /* Fixed height for the main app card */
+  max-width: 64rem;
+  /* Changed fixed height to max-height and added overflow-y: auto for internal scrolling */
+  max-height: 90vh; /* Max height to fit viewport */
+  overflow-y: auto; /* Allows content within the card to scroll if it overflows */
   display: flex;
-  flex-direction: column; /* Default vertical layout for mobile */
-  overflow: hidden; /* Hide overflowing content */
+  flex-direction: column;
+  /* Removed overflow: hidden here as overflow-y: auto is more specific */
 }
 
 @media (min-width: 768px) {
   .app-card {
-    flex-direction: row; /* Horizontal layout on larger screens */
+    flex-direction: row;
   }
 }
 
@@ -48,17 +50,17 @@ html, body, #root {
   min-height: 100vh;
   background-color: #1a202c;
   color: #a0aec0;
-  position: fixed; /* Overlay the entire screen */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1000; /* Ensure it's on top of other content */
+  z-index: 1000;
 }
 
 .loading-spinner-circle {
   border: 4px solid rgba(255, 255, 255, 0.3);
-  border-top: 4px solid #4299e1; /* Blue spinner */
+  border-top: 4px solid #4299e1;
   border-radius: 50%;
   width: 3rem;
   height: 3rem;
