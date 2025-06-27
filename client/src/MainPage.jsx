@@ -191,7 +191,7 @@ Prioritize a helpful, conversational flow over immediate redirection. Ensure all
       {/* Input Box */}
       <div className="input-area">
         <textarea
-          placeholder="What's on your mind..."
+          placeholder="Ask you'r query here..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyPress={handleKeyPress}
